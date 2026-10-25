@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI Sales & Support Desk — Landing Page
 
-## Getting Started
+Marketing site for **AI Sales & Support Desk by AppifyDevs**: one inbox for Facebook, Instagram, WhatsApp and
+website chat, where AI answers product questions and captures orders from the merchant's own catalog (in Bangla,
+English and Banglish) and hands difficult cases to a person.
 
-First, run the development server:
+**Live site:** https://aichatbot-landing.vercel.app/
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Tech stack
+
+- [Next.js](https://nextjs.org) 16 (App Router) with React 19 and TypeScript
+- [Tailwind CSS](https://tailwindcss.com) v4
+- [Framer Motion](https://motion.dev) for animation
+- [Lucide](https://lucide.dev) icons
+- Deployed on [Vercel](https://vercel.com)
+
+## Page sections
+
+The page is composed in `app/page.tsx`, in this order:
+
+| Section | Component | What it covers |
+| --- | --- | --- |
+| Hero | `components/sections/hero.tsx` | Headline and animated desk preview (`components/hero-desk.tsx`) |
+| Outcomes | `components/sections/outcomes.tsx` | What merchants get from the desk |
+| How it works | `components/sections/how-it-works.tsx` | Message → facts → reply pipeline |
+| Demo | `components/sections/demo.tsx` | Interactive customer-conversation scenarios |
+| Safety | `components/sections/safety.tsx` | Grounded replies, guardrails, handover, review mode |
+| Channels | `components/sections/channels.tsx` | Channel roadmap and availability |
+| Reports | `components/sections/reports.tsx` | Sample performance reports |
+| Pilot | `components/sections/pilot.tsx` | Pilot onboarding steps |
+| Pricing | `components/sections/pricing.tsx` | Plans |
+| FAQ | `components/sections/faq.tsx` | Common questions |
+| CTA | `components/sections/cta.tsx` | Final call to action |
+
+## Project structure
+
+```
+app/            Root layout, metadata, global styles and the landing page
+components/     Navbar, footer, shared UI and motion helpers
+  sections/     One file per landing-page section
+lib/content.ts  All site copy and data (nav links, outcomes, pipeline, safety, roadmap, plans, pilot, FAQs)
+product_plan.md Product plan the landing page copy is based on
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+To change text, plans, FAQs or the channel roadmap, edit `lib/content.ts` — the section components read from it.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Getting started
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Requires Node.js 20+.
 
-## Learn More
+```bash
+npm install
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+Open http://localhost:3000.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Scripts
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Start the development server |
+| `npm run build` | Create a production build |
+| `npm run start` | Serve the production build |
+| `npm run lint` | Run ESLint |
 
-## Deploy on Vercel
+## Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The site is deployed on Vercel at https://aichatbot-landing.vercel.app/.
